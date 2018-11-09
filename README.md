@@ -26,7 +26,7 @@ $ cd tensorflow-nividia-dockerfile
 $ docker build . -t tensorflow
 
 # コンテナ作成
-$ docker run --runtime=nvidia -it -p 8888:8888 sakito_learning /bin/bash
+$ docker run --runtime=nvidia -it -p 8888:8888 tensorflow /bin/bash
 
 # JupyterNoteBook起動
 $ jupyter notebook --allow-root
