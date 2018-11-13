@@ -14,11 +14,14 @@ RUN pip3 install --upgrade pip
 RUN pip install tensorflow-gpu keras
 
 # jupyter のインストール
-RUN pip install numpy scipy matplotlib Pillow ipython[all] jupyter
+RUN pip install numpy scipy japanize-matplotlib matplotlib Pillow ipython[all] jupyter seaborn
 
 # jupyterでpython3を使えるように設定
 RUN python3 -m pip install ipykernel
 RUN python3 -m ipykernel install --user
+
+# matplotlibを最新にする
+RUN python3 -m pip install --user matplotlib --upgrade
 
 # ネットワークの設定
 COPY jupyter_notebook_config.py /root/.jupyter/
